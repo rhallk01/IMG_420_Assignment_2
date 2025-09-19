@@ -1,0 +1,73 @@
+[gd_scene load_steps=14 format=4 uid="uid://cnvjf5uj6x52e"]
+
+[ext_resource type="PackedScene" uid="uid://dum63pbdsv2w2" path="res://scenes/background.tscn" id="1_4wyf3"]
+[ext_resource type="Script" uid="uid://bmop2gjy00ajy" path="res://scripts/world.gd" id="1_71j4m"]
+[ext_resource type="PackedScene" uid="uid://bngiagld8had4" path="res://scenes/tile_map_layer.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://cu3p1t260gv46" path="res://scenes/player.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://hus8sgn5f4t" path="res://scenes/mainMenu.tscn" id="4_k0juu"]
+[ext_resource type="PackedScene" uid="uid://bpmhp7p3oppt0" path="res://scenes/jump_boost.tscn" id="6_qfnet"]
+[ext_resource type="AudioStream" uid="uid://bqybqn0866sbu" path="res://assets/autumn-waltz-174280.mp3" id="7_e3hyu"]
+[ext_resource type="PackedScene" uid="uid://dhebrw13k6je3" path="res://scenes/enemy.tscn" id="7_i7141"]
+[ext_resource type="PackedScene" uid="uid://dab2cod12xaaw" path="res://scenes/chest.tscn" id="8_4mrxx"]
+[ext_resource type="AudioStream" uid="uid://b6mh2afg2vm8y" path="res://assets/piano-g-6200.mp3" id="8_q5onr"]
+[ext_resource type="PackedScene" uid="uid://brg04nkkx6n0q" path="res://scenes/hud_tutorial.tscn" id="9_7r4gi"]
+[ext_resource type="PackedScene" uid="uid://bk52t225s8pcr" path="res://scenes/key.tscn" id="10_w7kh3"]
+[ext_resource type="PackedScene" uid="uid://tfegmnkqeo26" path="res://scenes/flame_guy.tscn" id="13_jhx03"]
+
+[node name="World" type="Node2D"]
+position = Vector2(78, -17)
+script = ExtResource("1_71j4m")
+
+[node name="Background" parent="." instance=ExtResource("1_4wyf3")]
+show_behind_parent = true
+position = Vector2(-503, -105)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(2, 5)
+tile_map_data = PackedByteArray("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")
+
+[node name="Chest" parent="." instance=ExtResource("8_4mrxx")]
+position = Vector2(1265.9999, 53)
+scale = Vector2(0.55, 0.55)
+
+[node name="Player" parent="." instance=ExtResource("2_rwgxs")]
+position = Vector2(42, 134)
+
+[node name="MainMenu" parent="." instance=ExtResource("4_k0juu")]
+layer = 1000
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_e3hyu")
+volume_db = 1.565
+autoplay = true
+parameters/looping = true
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_q5onr")
+
+[node name="JumpBoost" parent="." instance=ExtResource("6_qfnet")]
+position = Vector2(208, 66)
+scale = Vector2(0.7, 0.7)
+
+[node name="Enemy" parent="." instance=ExtResource("7_i7141")]
+position = Vector2(643, 92)
+scale = Vector2(0.6, 0.6)
+
+[node name="HUD_tutorial" parent="." instance=ExtResource("9_7r4gi")]
+
+[node name="Key" parent="." instance=ExtResource("10_w7kh3")]
+position = Vector2(955, 9)
+scale = Vector2(0.6, 0.6)
+
+[node name="FlameGuy" parent="." instance=ExtResource("13_jhx03")]
+position = Vector2(1175, 10)
+
+[connection signal="game_won" from="Chest" to="." method="_on_chest_game_won"]
+[connection signal="need_key" from="Chest" to="." method="_on_chest_need_key"]
+[connection signal="show_won" from="Chest" to="." method="_on_chest_show_won"]
+[connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
+[connection signal="start_game" from="MainMenu" to="." method="new_game"]
+[connection signal="boost" from="JumpBoost" to="." method="_on_jump_boost_boost"]
+[connection signal="diedByEnemy" from="Enemy" to="." method="_on_enemy_died_by_enemy"]
+[connection signal="got_key" from="Key" to="." method="_on_key_got_key"]
+[connection signal="killedByFire" from="FlameGuy" to="Enemy" method="_on_flame_guy_killed_by_fire"]

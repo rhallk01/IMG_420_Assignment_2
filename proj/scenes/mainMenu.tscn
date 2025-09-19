@@ -1,0 +1,119 @@
+[gd_scene load_steps=5 format=3 uid="uid://hus8sgn5f4t"]
+
+[ext_resource type="FontFile" uid="uid://b2ptyjvpxuwdj" path="res://assets/EagleLake-Regular.ttf" id="1_ahhtf"]
+[ext_resource type="Script" uid="uid://uuowgmoi27gi" path="res://scripts/mainmenu.gd" id="1_oo0fn"]
+[ext_resource type="Texture2D" uid="uid://bwjvnrspu82a2" path="res://assets/textures/background_layer_1.png" id="2_5ysmq"]
+[ext_resource type="AudioStream" uid="uid://h24r6h6xd2jm" path="res://assets/cozy-autumn-beautiful-piano-song-201836.mp3" id="4_l7wge"]
+
+[node name="MainMenu" type="CanvasLayer"]
+script = ExtResource("1_oo0fn")
+
+[node name="WinOrLosebg" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -161.0
+offset_right = 161.0
+offset_bottom = 180.0
+grow_horizontal = 2
+texture = ExtResource("2_5ysmq")
+
+[node name="WinOrLose" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -27.0
+offset_right = 160.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 21
+text = "Win or Lose"
+horizontal_alignment = 1
+
+[node name="howDie" type="Label" parent="WinOrLose"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -161.0
+offset_top = 10.0
+offset_right = 159.0
+offset_bottom = 59.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 14
+text = "how die"
+horizontal_alignment = 1
+
+[node name="MainMenubg" type="TextureRect" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -161.0
+offset_right = 161.0
+offset_bottom = 180.0
+grow_horizontal = 2
+texture = ExtResource("2_5ysmq")
+
+[node name="Message" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -160.0
+offset_top = 19.0
+offset_right = 161.0
+offset_bottom = 46.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("1_ahhtf")
+text = "The Legend of Autumn"
+horizontal_alignment = 1
+
+[node name="Message2" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -39.5
+offset_right = 160.0
+offset_bottom = 9.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 11
+text = "get the key and 
+open the chest to win...
+die to lose!"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -41.5
+offset_top = -70.0
+offset_right = 41.5
+offset_bottom = -23.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_ahhtf")
+theme_override_font_sizes/font_size = 23
+text = "Start!"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

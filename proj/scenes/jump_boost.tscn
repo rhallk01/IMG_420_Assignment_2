@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpmhp7p3oppt0"]
+
+[ext_resource type="Script" uid="uid://dqou74cjmnkpj" path="res://scripts/jump_boost.gd" id="1_7suac"]
+[ext_resource type="Texture2D" uid="uid://cgyig08bk878d" path="res://assets/textures/pumpkin.png" id="1_ux5ng"]
+[ext_resource type="FontFile" uid="uid://b2ptyjvpxuwdj" path="res://assets/EagleLake-Regular.ttf" id="3_7knhk"]
+[ext_resource type="Texture2D" uid="uid://cry88vibbweqm" path="res://assets/textures/arrow.png" id="4_ow3vr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7suac"]
+radius = 16.03122
+
+[node name="JumpBoost" type="Area2D"]
+script = ExtResource("1_7suac")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_ux5ng")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 1)
+shape = SubResource("CircleShape2D_7suac")
+
+[node name="BoostLabel" type="Label" parent="."]
+offset_left = -76.0
+offset_top = -17.0
+offset_right = -31.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("3_7knhk")
+theme_override_font_sizes/font_size = 9
+text = "Jump
+Boost"
+horizontal_alignment = 1
+
+[node name="BoostArrow" type="Sprite2D" parent="BoostLabel"]
+position = Vector2(45, 17)
+rotation = 2.3224838
+scale = Vector2(0.027019443, 0.027637864)
+texture = ExtResource("4_ow3vr")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

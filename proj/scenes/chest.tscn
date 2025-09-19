@@ -1,0 +1,211 @@
+[gd_scene load_steps=12 format=3 uid="uid://dab2cod12xaaw"]
+
+[ext_resource type="Texture2D" uid="uid://bldxrxqo2n7jv" path="res://assets/textures/open_chest.png" id="1_gqd3d"]
+[ext_resource type="Script" uid="uid://mibdfq46rokw" path="res://scripts/chest.gd" id="1_yue2o"]
+[ext_resource type="FontFile" uid="uid://b2ptyjvpxuwdj" path="res://assets/EagleLake-Regular.ttf" id="2_yue2o"]
+[ext_resource type="Texture2D" uid="uid://cry88vibbweqm" path="res://assets/textures/arrow.png" id="3_yhylo"]
+[ext_resource type="Texture2D" uid="uid://b2jh1k0j6ripf" path="res://assets/textures/closed_chest.png" id="5_w02o5"]
+[ext_resource type="Texture2D" uid="uid://b6ji18k4d5pyi" path="res://assets/textures/sunflower.png" id="5_yhylo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w02o5"]
+size = Vector2(36, 32)
+
+[sub_resource type="Animation" id="Animation_kg5gm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_gqd3d")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8me8i"]
+resource_name = "closed"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("5_w02o5")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_ilhio"]
+resource_name = "open"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_gqd3d")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8me8i"]
+_data = {
+&"RESET": SubResource("Animation_kg5gm"),
+&"closed": SubResource("Animation_8me8i"),
+&"open": SubResource("Animation_ilhio")
+}
+
+[node name="Chest" type="Area2D"]
+script = ExtResource("1_yue2o")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1, -22)
+texture = ExtResource("1_gqd3d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -17)
+shape = SubResource("RectangleShape2D_w02o5")
+
+[node name="ChestLabel" type="Label" parent="."]
+offset_left = -34.0
+offset_top = -127.0
+offset_right = 35.0
+offset_bottom = -92.0
+theme_override_fonts/font = ExtResource("2_yue2o")
+theme_override_font_sizes/font_size = 9
+text = "Get the 
+chest!"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="arrow" type="Sprite2D" parent="ChestLabel"]
+position = Vector2(34, 45)
+rotation = 3.889842
+scale = Vector2(0.027019443, 0.027637862)
+texture = ExtResource("3_yhylo")
+
+[node name="AnimationPlayerChest" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_8me8i")
+}
+
+[node name="Flower" type="Sprite2D" parent="."]
+position = Vector2(-2, -57)
+texture = ExtResource("5_yhylo")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

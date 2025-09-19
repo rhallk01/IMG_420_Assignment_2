@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=4 uid="uid://cnvjf5uj6x52e"]
+
+[ext_resource type="PackedScene" uid="uid://dum63pbdsv2w2" path="res://scenes/background.tscn" id="1_4wyf3"]
+[ext_resource type="Script" uid="uid://bmop2gjy00ajy" path="res://scripts/world.gd" id="1_71j4m"]
+[ext_resource type="PackedScene" uid="uid://bngiagld8had4" path="res://scenes/tile_map_layer.tscn" id="1_nnsk1"]
+[ext_resource type="PackedScene" uid="uid://cu3p1t260gv46" path="res://scenes/player.tscn" id="2_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://hus8sgn5f4t" path="res://scenes/hud.tscn" id="4_k0juu"]
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_71j4m"]
+
+[node name="World" type="Node2D"]
+position = Vector2(-31, 0)
+script = ExtResource("1_71j4m")
+
+[node name="Background" parent="." instance=ExtResource("1_4wyf3")]
+position = Vector2(-81, -78)
+
+[node name="TileMapLayer" parent="." instance=ExtResource("1_nnsk1")]
+position = Vector2(2, 6)
+tile_map_data = PackedByteArray("AAAEAAcAAAAGAAcAAAAEAAgAAAAGAAgAAAAGAAkAAAAIAAkAAAAPAAoAAAAUAA0AAAACAAoAAAASAAwAAAACAAsAAAASAA0AAAADAAoAAAASAAwAAAADAAsAAAASAA0AAAAEAAoAAAATAAwAAAAEAAsAAAATAA0AAAAFAAoAAAAUAAwAAAAFAAsAAAAUAA0AAAAHAAoAAAAUAAwAAAAHAAsAAAAUAA0AAAAKAAkAAAASAAwAAAAKAAoAAAASAA0AAAALAAkAAAATAAwAAAALAAoAAAATAA0AAAAMAAkAAAAUAAwAAAAMAAoAAAAUAA0AAAANAAkAAAASAAwAAAANAAoAAAASAA0AAAAOAAkAAAATAAwAAAAOAAoAAAATAA0AAAAPAAkAAAAUAAwAAAAMAAUAAAATAAwAAAAMAAYAAAADABIAAAANAAUAAAAUAAwAAAANAAYAAAAEABIAAAAQAAkAAAASAAkAAAAQAAoAAAASAAoAAAARAAkAAAATAAkAAAARAAoAAAATAAoAAAASAAkAAAAUAAkAAAASAAoAAAAUAAoAAAATAAkAAAASAAwAAAATAAoAAAASAA0AAAAUAAkAAAATAAwAAAAUAAoAAAATAA0AAAAVAAkAAAAUAAwAAAAVAAoAAAAUAA0AAAAWAAkAAAAUAAwAAAAWAAoAAAAUAA0AAAAXAAkAAAATAAkAAAAXAAoAAAATAAoAAAAYAAkAAAAUAAkAAAAYAAoAAAAUAAoAAAD//woAAAASAAkAAAD//wsAAAASAAoAAAAAAAoAAAATAAkAAAAAAAsAAAATAAoAAAABAAoAAAAUAAkAAAABAAsAAAAUAAoAAAAZAAYAAAAIAA0AAAAZAAcAAAAIAA4AAAAaAAYAAAAJAA0AAAAaAAcAAAAJAA4AAAAbAAYAAAAKAA0AAAAbAAcAAAAKAA4AAAAcAAYAAAALAA0AAAAcAAcAAAALAA4AAAAeAAUAAAAIAA0AAAAeAAYAAAAIAA4AAAAfAAUAAAAJAA0AAAAfAAYAAAAJAA4AAAAgAAUAAAAKAA0AAAAgAAYAAAAKAA4AAAAhAAUAAAALAA0AAAAhAAYAAAALAA4AAAAjAAMAAAAIAA0AAAAjAAQAAAAIAA4AAAAkAAMAAAAJAA0AAAAkAAQAAAAJAA4AAAAlAAMAAAAKAA0AAAAlAAQAAAAKAA4AAAAmAAMAAAALAA0AAAAmAAQAAAALAA4AAAAMAAcAAAATAA0AAAANAAcAAAAUAA0AAAA=")
+
+[node name="Player" parent="." instance=ExtResource("2_rwgxs")]
+position = Vector2(85, 117)
+
+[node name="HUD" parent="." instance=ExtResource("4_k0juu")]
+
+[node name="Music" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamMP3_71j4m")
+
+[node name="DeathSound" type="AudioStreamPlayer2D" parent="."]
+stream = SubResource("AudioStreamMP3_71j4m")
+
+[connection signal="game_over" from="Player" to="." method="_on_player_game_over"]
+[connection signal="start_game" from="HUD" to="." method="new_game"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://tfegmnkqeo26"]
+
+[ext_resource type="Script" uid="uid://diwcbg55yrewp" path="res://scripts/flame_guy.gd" id="1_cudli"]
+
+[node name="FlameGuy" type="Area2D"]
+script = ExtResource("1_cudli")
+
+[node name="FireGuy" type="FireGuy" parent="."]
+
+[connection signal="diedByFlame" from="FireGuy" to="." method="_on_fire_guy_died_by_flame"]

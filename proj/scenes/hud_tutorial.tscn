@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://brg04nkkx6n0q"]
+
+[ext_resource type="Script" uid="uid://2c23wx7xvuiq" path="res://scripts/hud_tutorial.gd" id="1_31j6a"]
+[ext_resource type="FontFile" uid="uid://b2ptyjvpxuwdj" path="res://assets/EagleLake-Regular.ttf" id="1_ags0l"]
+
+[node name="HUD_tutorial" type="CanvasLayer"]
+script = ExtResource("1_31j6a")
+
+[node name="MoveKeyLabel" type="Label" parent="."]
+offset_left = 2.0
+offset_top = 22.0
+offset_right = 323.0
+offset_bottom = 79.0
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("1_ags0l")
+theme_override_font_sizes/font_size = 8
+text = "use the arrow keys to move 
+and space to jump
+(up/down/left/right)"
+horizontal_alignment = 1
+
+[node name="BoostMessage" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -73.0
+offset_top = 2.0
+offset_right = 71.0
+offset_bottom = 25.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ags0l")
+theme_override_font_sizes/font_size = 10
+text = "5 sec jump boost"
+horizontal_alignment = 1
+
+[node name="YouWin" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 39.0
+offset_right = 72.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ags0l")
+theme_override_font_sizes/font_size = 10
+text = "You win!"
+horizontal_alignment = 1
+
+[node name="keyStatus" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 110.0
+offset_top = 1.0
+offset_right = 160.0
+offset_bottom = 26.0
+grow_horizontal = 2
+theme_override_constants/line_spacing = -2
+theme_override_fonts/font = ExtResource("1_ags0l")
+theme_override_font_sizes/font_size = 6
+text = "You need 
+the key"
+horizontal_alignment = 1
+
+[node name="GetTheKey" type="Label" parent="."]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -72.0
+offset_top = 39.0
+offset_right = 72.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_ags0l")
+theme_override_font_sizes/font_size = 10
+text = "You need the key!"
+horizontal_alignment = 1
