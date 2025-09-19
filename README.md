@@ -21,4 +21,9 @@
 ## Method Triggered by Signal From Existing Node:
 
 * The method 'void FireGuy::_on_signal_emitted()' is triggered when the Player node emits "game_over" or the Enemy node emits "killedByEnemy".
-* In this function, the amount of times the player has died is kept track of by iterating "death_num" and the text in the label for Fire Guy is updated based on how many deaths you've had. 
+* In this function, the amount of times the player has died is kept track of by iterating "death_num" and the text in the label for Fire Guy is updated based on how many deaths you've had.
+
+##Extra Credit - Animation
+* The fire guy is animated in the cpp so that he flickers moves a bit.
+* He is an animated sprite 2d with Sprite Frames
+* The sprite frames are set, the animation is set, and play is called in the cpp function "FireGuy::FireGuy()"
