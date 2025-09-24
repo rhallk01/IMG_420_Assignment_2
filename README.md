@@ -27,13 +27,14 @@
 * The fire guy is animated in the cpp so that he flickers moves a bit.
 * He is an animated sprite 2d with Sprite Frames
 * The sprite frames are set, the animation is set, and play is called in the cpp function "FireGuy::FireGuy()"
-
-
-
-# This Assignment is Built on Assignment 1; As a refresher, the README for Assignment 1 is as follows
-
+  
+  
+  
+# This Assignment is Built on Assignment 1
+## As a refresher, the README for Assignment 1 is as follows
+  
 # 2d platformer: The Legend of Autumn
-
+  
 ## Playable Character
 #### Use the arrow keys and space to move
   * Left key to go left 
