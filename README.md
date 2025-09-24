@@ -28,12 +28,16 @@
 * He is an animated sprite 2d with Sprite Frames
 * The sprite frames are set, the animation is set, and play is called in the cpp function "FireGuy::FireGuy()"
   
-  
-  
+  <br />
+  <br />
 # This Assignment is Built on Assignment 1
 ## As a refresher, the README for Assignment 1 is as follows
+
+  <br />
   
-# 2d platformer: The Legend of Autumn
+## 2d platformer: The Legend of Autumn
+
+  <br />
   
 ## Playable Character
 #### Use the arrow keys and space to move
